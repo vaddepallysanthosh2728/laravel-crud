@@ -17,7 +17,7 @@
             <td>{{$s['first_name']}}</td>
             <td>{{$s['last_name']}}</td>
             <td style="float:right">
-                <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                <a href="{{action('StudentController@edit',$s['id'])}}" class="btn btn-primary btn-sm">Edit</a>
                 <a href="#" class="btn btn-danger btn-sm">Delete</a>
             </td>
             </tr>
