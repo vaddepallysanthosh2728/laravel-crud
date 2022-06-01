@@ -68,7 +68,7 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   echo $id;exit;
         $student = Student::find($id);
         
         return view('student.edit',compact('student','id'));
@@ -109,6 +109,14 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+       echo 'hi';exit;
+    }
+    public function deleteStudent($id)
+    {
+        // $student=Student::where('id',$id)->delete();
+       $student = Student::findOrFail($id);
+       
+       $student->delete();
+       return redirect()->route('student.index')->with('deleted','Record Deleted Successfully');
     }
 }

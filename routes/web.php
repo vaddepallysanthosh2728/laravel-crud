@@ -14,5 +14,6 @@
 Route::get('/','StudentController@index');
 Route::get('/student','StudentController@index');
 Route::get('/create','StudentController@create');
+Route::delete('/delete/{id}','StudentController@deleteStudent');
 
 Route::resource('student','StudentController');
