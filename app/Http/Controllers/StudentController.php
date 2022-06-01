@@ -83,7 +83,22 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        print_r($request->all());exit;
+        $this->validate($request,[
+            'first_name'    =>  'required',
+            'last_name'     =>  'required'
+        ]);
+      
+        $student = Student::find($id);
+        $student->first_name = $request->first_name;
+        $student->last_name = $request->last_name;
+
+        if($student->save()){
+            return redirect()->route('student.index')->with('success','Updated Successfully.');
+        }
+        else{
+            return redirect()->route('student.index')->with('failed','Failed.');
+        }
+        
     }
 
     /**

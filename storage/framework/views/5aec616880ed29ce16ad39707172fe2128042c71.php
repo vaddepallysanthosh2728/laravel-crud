@@ -2,9 +2,14 @@
 <div class="row">
     <div class="col-md-12">     
         <a style="float:right;margin-top:10px;" href="<?php echo e(route('student.create')); ?>" class="btn btn-primary">Add</a>
-        
         <br />
         <h3 aling="center">All Students</h3>
+        <?php if(\Session::has('success')): ?>
+            <div class="alert alert-success"><?php echo e(\Session::get('success')); ?></div>
+        <?php endif; ?>
+        <?php if(\Session::has('failed')): ?>
+            <div class="alert alert-danger"><?php echo e(\Session::get('failed')); ?></div>
+        <?php endif; ?>
         <table class="table table-striped">
             <tr>
                 <td>First Name</td>

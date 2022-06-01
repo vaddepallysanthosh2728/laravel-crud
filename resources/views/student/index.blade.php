@@ -3,9 +3,14 @@
 <div class="row">
     <div class="col-md-12">     
         <a style="float:right;margin-top:10px;" href="{{route('student.create')}}" class="btn btn-primary">Add</a>
-        
         <br />
         <h3 aling="center">All Students</h3>
+        @if(\Session::has('success'))
+            <div class="alert alert-success">{{\Session::get('success')}}</div>
+        @endif
+        @if(\Session::has('failed'))
+            <div class="alert alert-danger">{{\Session::get('failed')}}</div>
+        @endif
         <table class="table table-striped">
             <tr>
                 <td>First Name</td>

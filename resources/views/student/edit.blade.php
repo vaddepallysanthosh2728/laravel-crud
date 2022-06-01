@@ -15,9 +15,15 @@
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="first_name" value="{{$student->first_name}}" placeholder="Enter First Name" />
+                    @if($errors->has('first_name'))
+                        <span class="text-danger">{{$errors->first('first_name')}}</span>
+                    @endif
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="last_name " value="{{$student->last_name}}" placeholder="Enter Last Name" />
+                    <input type="text" class="form-control" name="last_name" value="{{$student->last_name}}" placeholder="Enter Last Name" />
+                    @if($errors->has('last_name'))
+                        <span class="text-danger">{{$errors->first('last_name')}}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Update</button>
